@@ -19,7 +19,7 @@ Start Localstack and PostgreSQL containers using Docker Compose:
 
 ```sh
 docker-compose up -d
-
+```
 ### 2. Verify SQS and PostgreSQL Setup
 
 Open a new terminal and use the following command to interact with Localstack:
@@ -27,14 +27,14 @@ Open a new terminal and use the following command to interact with Localstack:
 ```sh
 awslocal sqs create-queue --queue-name login-queue
 
-
+```
 ### 3. Run the Main ETL Script
 
 Execute the main script to fetch messages from the SQS queue, mask PII, and insert the transformed data into PostgreSQL:
 
 ```sh
 python etl.py
-
+```
 ### 4. Verify Data Insertion in PostgreSQL
 
 #### Using pgAdmin
@@ -54,7 +54,7 @@ python etl.py
 ```sql
 SELECT * FROM user_logins;
 
-
+```
 
 ## Files and Their Roles
 
